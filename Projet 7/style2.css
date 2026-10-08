@@ -1,0 +1,35 @@
+body
+{
+	background-color: red;
+	font-family: Arial;
+	font-size: 2em; 
+}
+.titre
+{
+	background-color: green;
+	height: 300px;
+	width: 400px;
+
+	color:yellow;
+	float: left;
+
+
+}.b2
+{
+	background-color: yellow;
+	height: 400px;
+	width: 400px;
+	margin-bottom: 20px;
+	color:green;
+	float: right;
+
+}
+.b3
+{
+	background-color: black;
+	height: 400px;
+	width: 400px;
+
+	color: yellow;
+	clear:both;
+}
