@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+}
+
+
+.pageglobal{
+  width: 900px;
+  margin: auto;
+  border: 3px solid black;
+
+
+
+
+}
+.rouge {
+
+  overflow: hidden;
+  padding: 10px;
+
+}
+
+.vert {
+ 
+  float: left;
+  width: 60%;
+}
+
+.orange {
+ 
+  float: right;
+  width: 30%;
+}
+
+.vert h1,
+.vert p {
+  margin-top: 0;
+}
+
+.orange img {
+  display: block;
+  width: 200px;
+  margin-left: auto;
+}
+
+
+
+
+
+
+.bloc1 {
+
+  overflow: hidden;
+  padding: 10px;
+}
+
+.bloc2{
+ 
+  float: left;
+  width: 20%;
+}
+
+.bloc3{
+ 
+  float: right;
+  width: 70%;
+}
+
+
+
+
+
+
+
+
+
+.bloc4 {
+
+  overflow: hidden;
+  padding: 10px;
+}
+
+.bloc5{
+ 
+  float: left;
+  width: 20%;
+}
+
+.bloc6{
+ 
+  float: right;
+  width: 70%;
+}
+
+.bloc7 {
+
+  overflow: hidden;
+  padding: 10px;
+}
+
+.bloc8 {
+ 
+  float: left;
+  width: 20%;
+}
+
+.bloc9 {
+ 
+  float: right;
+  width: 70%;
+}
+.bloc10 {
+
+  overflow: hidden;
+  padding: 10px;
+}
+
+.bloc11 {
+ 
+  float: left;
+  width: 20%;
+
+}
+
+.bloc12 {
+ 
+  float: right;
+  width: 70%;
+}
+
+
+
