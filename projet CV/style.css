@@ -1,16 +1,10 @@
 body {
   margin: 0;
 }
-
-
 .pageglobal{
   width: 900px;
   margin: auto;
   border: 3px solid black;
-
-
-
-
 }
 .rouge {
 
@@ -18,19 +12,16 @@ body {
   padding: 10px;
 
 }
-
 .vert {
  
   float: left;
   width: 60%;
 }
-
 .orange {
  
   float: right;
   width: 30%;
 }
-
 .vert h1,
 .vert p {
   margin-top: 0;
@@ -41,12 +32,6 @@ body {
   width: 200px;
   margin-left: auto;
 }
-
-
-
-
-
-
 .bloc1 {
 
   overflow: hidden;
@@ -64,14 +49,6 @@ body {
   float: right;
   width: 70%;
 }
-
-
-
-
-
-
-
-
 
 .bloc4 {
 
