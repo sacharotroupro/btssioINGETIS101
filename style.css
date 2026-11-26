@@ -1,0 +1,182 @@
+/* ===== Couleurs : bleu nuit + bleu #17657D ===== */
+:root {
+    --fond: #03141c;
+    --surface: #082330;
+    --surface-2: #0c2e3d;
+    --bordure: #0f2b36;                     /* contour normal, plus sombre que le bleu du survol */
+    --texte-doux: #8fb4c2;
+    --paon: #17657D;                        /* ton bleu */
+    --paon-clair: #3fa9c6;                  /* version plus claire pour les textes */
+    --paon-leger: rgba(23, 101, 125, 0.35);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--fond);
+    background-image: radial-gradient(circle at 50% -10%, rgba(23, 101, 125, 0.45), transparent 60%);
+    background-attachment: fixed;
+    min-height: 100%;
+}
+
+/* ===== La page devient une grille de 4 colonnes ===== */
+body {
+    background: transparent;   /* remplace le bgcolor de ton HTML */
+    font-family: "Segoe UI", system-ui, sans-serif;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 30px;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    align-content: start;
+
+    counter-reset: projet;   /* compteur pour numéroter les cases */
+}
+
+/* On cache les <br>, c'est la grille qui gère l'espace */
+br {
+    display: none;
+}
+
+/* On enlève le soulignement des titres.
+   display: contents rend les <u> "transparents" pour la grille
+   (ton <u> non fermé après "Sacha Rotrou" englobe tout le reste de la page) */
+u {
+    text-decoration: none;
+}
+
+body > u,
+body > u > u {
+    display: contents;
+}
+
+/* ===== Titres : ils prennent toute la largeur ===== */
+h1 {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+/* "Sacha Rotrou" */
+body > h1:first-of-type {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+/* Petit "BTS SIO" bleu au-dessus du nom */
+body > h1:first-of-type::before {
+    content: "BTS SIO";
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--paon-clair);
+    margin-bottom: 6px;
+}
+
+/* "Sommaire de mes projets" */
+body > h1:nth-of-type(2),
+body > u h1 {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--texte-doux) !important;  /* !important car ton HTML a style="color: white" */
+    margin-bottom: 24px;
+}
+
+/* ===== Chaque lien devient une case ===== */
+a {
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+    padding: 22px;
+    border: 2px solid var(--bordure);
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+
+    /* Fond de la case + barre bleue en bas (largeur 0 au départ) */
+    background:
+        linear-gradient(var(--paon), var(--paon)) left bottom / 0% 4px no-repeat,
+        var(--surface);
+
+    transition: transform 0.3s ease, border-color 0.3s ease,
+                box-shadow 0.3s ease, background-size 0.4s ease,
+                background-color 0.3s ease, color 0.3s ease;
+
+    counter-increment: projet;
+}
+
+/* Numéro automatique en haut de la case : 01, 02, 03... */
+a::before {
+    content: counter(projet, decimal-leading-zero);
+    align-self: flex-start;
+    font-size: 13px;
+    color: var(--paon-clair);
+    background: var(--paon-leger);
+    border-radius: 6px;
+    padding: 2px 8px;
+    margin-bottom: 14px;
+}
+
+/* "Voir le projet" en bas de la case */
+a::after {
+    content: "Voir le projet";
+    margin-top: auto;
+    padding-top: 16px;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--texte-doux);
+    transition: color 0.2s;
+}
+
+/* ===== Animation au survol : bleu #17657D ===== */
+a:hover {
+    color: var(--paon-clair) !important;      /* !important car ton HTML a style="color: white" */
+    border-color: var(--paon);                /* contour bleu #17657D */
+    background-color: var(--surface-2);
+    background-size: 100% 4px, auto;          /* la barre du bas se remplit de gauche à droite */
+    transform: translateY(-6px);              /* la case se soulève */
+    box-shadow: 0 0 0 2px var(--paon),
+                0 12px 30px rgba(23, 101, 125, 0.70);   /* halo bleu */
+}
+
+a:hover::before {
+    background: var(--paon);
+    color: #ffffff;
+}
+
+a:hover::after {
+    color: var(--paon-clair);
+}
+
+a::before {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===== Écrans plus petits ===== */
+@media (max-width: 900px) {
+    body {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    body > h1:first-of-type {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 420px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+}
