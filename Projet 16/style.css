@@ -1,0 +1,16 @@
+
+
+.bouton {
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 24px;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.bouton:hover {
+  background-color: #1d4ed8;
+}
